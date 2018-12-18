@@ -1,0 +1,12 @@
+language: node_js
+node_js:
+  - node
+deploy:
+  provider: heroku
+  api_key:
+    secure: OXWus8e0NI7x/56TnSGg5t9UF1jxQWDgozqxVmhxZHdN27OGPHIqYWvwkVeDk4CtF3RojaZ0e8s0UIuJs1lH7FkoVb557YBxUMqa6EgITzptpHJg7s3lrpkZcwlL80xHr2reGdw4lR56ajJslT9rzqHKU4RMPFGOjE2wymWMQ7A8XuvXwSFGjFvqbgZADcVpss9+OPTF67JIeNTjOcLvyusI8Q6q3t7zSAUqo38PGw2xY2pGpQi1p9D3DyF6jHTJqOZcZ6UuzOqP++fu3tpgdaqGba8lhSCYp0X7Lu6y3HiCFwdLZonwz3jAOYDSQRaHGIIkiOOLPaf9S15+LMcGLoKiKfWVQmZcORnLoB8pyWXU2ciILyWM1NISRRon08tww3+jOED/vzAMXs42OoRJDN4kbSIFdC0cLyqEiZ1HtuCXKh7epNBIBPOcU3gSrd92R3jJnOgLlj5y/Rj4r7XJ9sPabGzMcllmNfYXXwdaitoMlThnMxPOMnhQE3T4hUTo1n/hlzNxmOqGZxkiOU9b2DPCKslVH+alqEkqdBjHt1M6ywn87jNQ3z1h4FubXAuz3+6HhXq652UGJG2Va3/G4hSd9DIUaQvppR51RTGD3ZP42AHWkUgnm3RRK7A2JLXuj/dKGIGZ/ANsF3Rrns4ISqrkWRSQ/3LkPAm9Zt0RqMU=
+before_script:
+  - psql -c 'create database travis_ci_test;' -U postgres
+  - psql -f schema.sql -U postgres
+after_success:
+  - npm run coverage
