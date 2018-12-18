@@ -1,0 +1,64 @@
+{
+  "name": "ireporter",
+  "version": "1.0.0",
+  "description": "iReporter enables any/every citizen to bring any form of corruption to the notice of appropriate authorities and the general public. Users can also report on things that needs government intervention",
+  "main": "server/app.js",
+  "scripts": {
+    "build": "babel -d build server",
+    "coverage": "nyc report --reporter=lcov --reporter=text-lcov | coveralls",
+    "postbuild": "cross-env NODE_ENV=production node build/database/migration.js migrate",
+    "prestart": "npm run build",
+    "serve": "cross-env NODE_ENV=development nodemon --exec babel-node server/app.js",
+    "start": "cross-env NODE_ENV=production node build/app.js",
+    "test": "cross-env NODE_ENV=test nyc --reporter=text mocha test/**/*.spec.js --timeout=3000 --exit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LordUche/sandbox.git"
+  },
+  "author": "Uchenna A. Iheanacho",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/LordUche/sandbox/issues"
+  },
+  "homepage": "https://github.com/LordUche/sandbox#readme",
+  "devDependencies": {
+    "@babel/polyfill": "^7.0.0",
+    "@babel/register": "^7.0.0",
+    "chai": "^4.2.0",
+    "chai-http": "^4.2.0",
+    "coveralls": "^3.0.2",
+    "eslint": "^5.10.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "mocha": "^5.2.0",
+    "nodemon": "^1.18.9",
+    "nyc": "^13.1.0"
+  },
+  "dependencies": {
+    "@babel/cli": "^7.2.0",
+    "@babel/core": "^7.2.2",
+    "@babel/node": "^7.2.2",
+    "@babel/preset-env": "^7.2.0",
+    "bcrypt": "^3.0.2",
+    "bluebird": "^3.5.3",
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.5",
+    "cross-env": "^5.2.0",
+    "dotenv": "^6.2.0",
+    "express": "^4.16.4",
+    "helmet": "^3.15.0",
+    "jsonwebtoken": "^8.4.0",
+    "morgan": "^1.9.1",
+    "pg-promise": "^8.5.4"
+  },
+  "nyc": {
+    "require": [
+      "@babel/register",
+      "@babel/polyfill"
+    ]
+  },
+  "engines": {
+    "node": "^10.12.0"
+  }
+}
