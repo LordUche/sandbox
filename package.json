@@ -56,5 +56,8 @@
       "@babel/register",
       "@babel/polyfill"
     ]
+  },
+  "engines": {
+    "node": "^10.12.0"
   }
 }
