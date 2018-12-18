@@ -1,12 +1,12 @@
 language: node_js
 node_js:
-  - node
+- node
 before_script:
-  - psql -c 'create database travis_ci_test;' -U postgres
-  - psql -f schema.sql -U postgres
+- psql -c 'create database travis_ci_test;' -U postgres
+- psql -f schema.sql -U postgres
 after_success:
-  - npm run coverage
+- npm run coverage
 deploy:
   provider: heroku
   api_key:
-    secure: gRVWyQVqek7+lynzvyX5+y2weye3iKPFI3AZaeGRWyCxIHiG25TA9Eypjs/QS/VoMxhkuRfqsjRIerxtf82bXtJlt2AD2rZRtoi4SaMfKo9tcl9zSYhZIqHaSRFYq5McAfxQx2Sm+uuBA3X5MLNbUCVeyzjeAOkCEradMeeUdQY3+WrxS3mwhkJ7jbtxcszUCjrl17IKbMBN5OFs6CaMcFohNtGNJiMGRoSJhv/GST4Je+AuIOy3FtfkWT7B/SRxm24vRrC7TzSr9LO0WImwvIqBUxwDAYfvfv8DBsNj2gnyeF6AYVyQmaA/zkqspdHayvUfzwFiEcGehWxWWfMpAE/AnZy7pnLttNPHBt0YqjdO+KLAX4SczFjhzNhuERqERgqWB1+SUZZRYGs0UD3a1B+f3quoxeWdW3zwpnldsfNh0TnCskBZRcVh8jRtu5oHIskG4vy3hZsMDDTgnKTMS8U4H0JSJAVYwXZPrkpJ9oG69AXtXujXqPsWsB289fcu95lwGFL3sw+sEV4qBYOC1oSAIxmvH6RlD+326Lip29p+w1NIj5/bskN6rL8przggeVUVUyAFrSUjuO7lw/qPTaRWW0DDbY6ILVEE6LBBqk/msdTl1tMMra9Goto/tK9qgX1gqhHUIcbm8WteM50QDFcL58sB3+ZvqjKiGjwMZ4w=
+    secure: bB7kdkp/mM3Bs2Ij3Q3fyf+/RskA4bpI+kgpaBw+pLEtzVbzpzqJVpUwmbe2uy1rpuIe6rXYNYvqMQ+yzD2L49djR8A+q4PDPbEW7R5k8onUUOY2SzOh6ml6f4fCa96Y/hd627dp09R6kjEkNDeSvDWE/0CTX8ndABChZOJycSGDxNXCqq/qNjQjKftWksXO/9MBRurjA44twmh1YbxyWPrb1nt71sKquZGTseonTQRZfZFNnMqpYwa2ALy8R2V2zhy+PkynJOzXMHbofxfQ+DPMqlJ6LqgIRorSMS7JewaMcLbew45m1oomTUAETItYCop+WfpsWME+4O9xHmv68Vft9Lr4jxvjgTHI4o2T230IvFHghS06hKK8y57lo+tZ18y2HBiCbd3cn23auX9PMGCkwJUolUnqdGTC5NPHdHo+J4F3aJElRVI4ds8cbVAxeYZVjRKZALU6wMvxTq379B0lyzhvSB7Cr/mGYbD70bFF+hqX6DV49SFAmzsI0+6ZkIHkzNDdU8Kgyb2slGg7T/S5RlPiCm9fMTdZplj6NWPLGUMK7YAjTkkfNNRab453eqqzJczM1kXfiknp4V9Rxq50pRaKMstXapbr0/U2M5BZDfGTGLJvkOdE+EYIQhg/Bdb7rZKrLlW6JFl8L3JAPS2k0z08aVxiIiQvDzEMnyI=
