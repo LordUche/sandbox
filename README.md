@@ -12,7 +12,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 You must have
 
-1. [Node.js](https://nodejs.org/) (_v10.12.0 or higher_) and npm (_v6.4.1 or higher_) installed on your local machine. Run `node -v` and `npm -v` in your terminal to confirm that you have them installed
+1. [Node.js](https://nodejs.org/) (_v10.12.0 or higher_) and NPM (_v6.4.1 or higher_) installed on your local machine. Run `node -v` and `npm -v` in your terminal to confirm that you have them installed
 
 2. A PostgreSQL DBMS installed on your local machine
 
@@ -44,12 +44,6 @@ To deploy to Heroku, install the [Heroku CLI](https://devcenter.heroku.com/artic
 heroku login
 heroku create
 git push heroku master
-```
-
-To create the tables on Heroku run
-
-```bash
-cat schema.sql | heroku pg:psql
 ```
 
 ## Built With
