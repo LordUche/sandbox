@@ -1,4 +1,6 @@
 import dotenv from 'dotenv';
+import fs from 'fs';
+import path from 'path';
 import express from 'express';
 import cors from 'cors';
 import helmet from 'helmet';
@@ -11,7 +13,11 @@ dotenv.config();
 const PORT = process.env.PORT || 5000;
 const app = express();
 
-if (process.env.NODE_ENV === 'development') app.use(logger('dev'));
+app.use(
+  logger('tiny', {
+    stream: fs.createWriteStream(path.join(`${__dirname}/../access.log`), { flags: 'a' }),
+  }),
+);
 app.use(helmet());
 app.use(cors());
 app.use(bodyParser.json());
