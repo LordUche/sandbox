@@ -1,6 +1,6 @@
 # iReporter
 
-[![Build Status](https://travis-ci.com/LordUche/sandbox.svg?branch=develop)](https://travis-ci.com/LordUche/sandbox) [![Coverage Status](https://coveralls.io/repos/github/LordUche/Sandbox/badge.svg?branch=develop)](https://coveralls.io/github/LordUche/Sandbox?branch=develop) [![Maintainability](https://api.codeclimate.com/v1/badges/a50cc56bfadcc52ff4f2/maintainability)](https://codeclimate.com/github/LordUche/sandbox/maintainability)
+[![Build Status](https://travis-ci.com/LordUche/sandbox.svg?branch=develop)](https://travis-ci.com/LordUche/sandbox) [![Coverage Status](https://coveralls.io/repos/github/LordUche/sandbox/badge.svg?branch=develop)](https://coveralls.io/github/LordUche/sandbox?branch=develop) [![Maintainability](https://api.codeclimate.com/v1/badges/a50cc56bfadcc52ff4f2/maintainability)](https://codeclimate.com/github/LordUche/sandbox/maintainability)
 
 iReporter enables any/every citizen to bring any form of corruption to the notice of appropriate authorities and the general public. Users can also report on things that needs government intervention
 
