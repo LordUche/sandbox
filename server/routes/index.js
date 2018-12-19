@@ -7,11 +7,12 @@ router.get('/', (req, res) => {
 });
 
 router.all('*', (req, res) => {
-  res.status(404).json('Page not found');
+  res.status(404);
+  throw new Error('Page not found');
 });
 
 router.use((err, req, res, next) => {
-  res.status(500).json({ status: 500, message: err.message });
+  res.json({ status: res.statusCode, message: err.message });
 });
 
 export default router;
